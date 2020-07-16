@@ -1,0 +1,183 @@
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: #2C2C2C;
+}
+
+.bg-main {
+  background: #2C2C2C;
+}
+
+.bg-yellow {
+  background: gold;
+  color: #000;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bg-red {
+  background: red;
+  color: #000;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bg-black {
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.container-fluid {
+  padding: 20px;
+}
+
+.bg-main .top-block .block-wrapper {
+  background: rgba(136, 136, 136, 0.5);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.bg-main .top-block .block-wrapper .digit {
+  color: #888888;
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+.bg-main .top-block .block-wrapper .bg-yellow {
+  color: #000;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: gold;
+}
+
+.bg-main .top-block .block-wrapper .bg-yellow:hover {
+  text-decoration: none;
+}
+
+.bg-main .clock {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bg-main .clock .clocks {
+  color: #888888;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.bg-main .map-block {
+  display: flex;
+  margin-top: 30px;
+}
+
+.bg-main .map-block .map-block-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container {
+  display: block;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .police-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid dodgerblue;
+  border-radius: 10px;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .thief-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid gold;
+  border-radius: 10px;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .police-header {
+  background: dodgerblue;
+  padding: 5px 15px;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .thief-wrapper .thief-header {
+  background: gold;
+  border: 2px solid gold;
+  padding: 5px 15px;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .lifes-and-coins {
+  color: #888888;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .lifes-and-coins span {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .lifes-and-coins span:last-child {
+  margin-bottom: 0;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .lifes-and-coins span span.bg-red, span.bg-yellow {
+  border: 2px solid #000;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .police-footer {
+  background: rgba(255, 99, 71, 0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px; 
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .police-footer span {
+  margin-right: 15px;
+}
+
+.bg-main .map-block .map-block-wrapper .common-container .police-footer span:last-child {
+  margin-right: 0;
+}
+
+.bg-main .footer-block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.bg-main .footer-block .btn-border {
+  display: block;
+  color: #888888;
+  font-size: 16px;
+  border: 2px solid #888888;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.bg-main .footer-block .btn-border.red {
+  border: 2px solid #ff0000;
+  color: #ff0000;
+}
+
+.bg-main .footer-block .btn-border:hover {
+  text-decoration: none;
+}

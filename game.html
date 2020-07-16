@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>study game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--  TODO: Раскомментировать при начале работы с сервером -->
+    <!-- <link rel="stylesheet" href="http://104.40.150.146/css/bootstrap.css" type="text/css" /> -->
+    <!-- <link rel="stylesheet" href="http://104.40.150.146/css/bootstrap-theme.css" type="text/css" /> -->
+
+     <!-- TODO: Закомментировать при начале работы с сервером  -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="game.css" type="text/css">
+</head>
+<body>
+<!-- TODO: Task 0. Построить вёрстку приложения по макету
+          используя для сетки bootstrap -->
+
+    <div class="container-fluid game-container bg-main">
+        
+        <div class="top-block">
+            <div class="block-wrapper">
+                <span class="digit">123</span>
+                <a class="bg-yellow">Регистрация</a>
+            </div>
+        </div>
+
+        <div class="clock">
+            <span class="clocks">00:30</span>
+        </div>
+
+        <div class="map-block">
+            <div class="map-block-wrapper">
+                <div class="common-container">
+                    <div class="police-wrapper">
+                        <div class="police-header">Полицейские</div>
+                        <div class="lifes-and-coins">
+                            <span>Жизни: <span class="bg-red">3</span></span>
+                            <span>Монеты: <span class="bg-yellow">0</span></span>
+                        </div>
+                        <div class="police-footer">
+                            <span class="bg-yellow">undefined</span>
+                            <span class="bg-red">undefined</span>
+                            <span class="bg-black">undefined</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map">
+                    <img src="map.png" alt="Карта">
+                </div>
+                <div class="common-container">
+                <div class="thief-wrapper">
+                    <div class="thief-header">Воры</div>
+                    <div class="lifes-and-coins">
+                        <span>Жизни: <span class="bg-red">3</span></span>
+                        <span>Монеты: <span class="bg-yellow">0</span></span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-block">
+            <a href="#" class="btn-border">К списку игр</a>
+            <a href="#" class="btn-border">Начать игру</a>
+            <a href="#" class="btn-border">Покинуть игру</a>
+            <a href="#" class="btn-border red">Прервать игру</a>
+        </div>
+
+    </div>
+
+<div class="hidden">
+    <img id="img_heart"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
+yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIH
+g9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Igp2aWV3Qm94PSIwIDAgM
+jQgMjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBmaWxsPSJyZWQiPgo8Zz4KPGc+CjxwYXRo
+IGQ9Ik0xLDEwLjFjLTAuNSwwLTAuOS0wLjQtMS0wLjlDMCw5LDAsOC43LDAsOC41YzAtMC4yLDA
+tMC40LDAtMC42bDAtMC4yYzAtMC4zLDAuMS0wLjYsMC4yLTAuOUMwLjUsNS44LDAuOSw1LDEuNS
+w0LjMKYzAuMS0wLjEsMC4xLTAuMSwwLjItMC4yQzIuOSwyLjgsNC42LDIsNi41LDJDMTAuMSwyL
+DEzLDQuOSwxMyw4LjVjMCwwLjYtMC40LDEtMSwxcy0xLTAuNC0xLTFDMTEsNiw5LDQsNi41LDQK
+QzUuMiw0LDQsNC41LDMuMiw1LjVjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDA
+uMWMtMC40LDAuNS0wLjcsMS0wLjksMS43QzIuMSw3LjUsMi4xLDcuNiwyLjEsNy44bDAsMC4zCm
+MwLDAuMSwwLDAuMywwLDAuNGMwLDAuMiwwLDAuMywwLDAuNGMwLjEsMC41LTAuMywxLTAuOSwxL
+jFDMS4xLDEwLjEsMS4xLDEwLjEsMSwxMC4xeiIvPgo8L2c+CjwvZz4KPGc+CjxnPgo8cGF0aCBk
+PSJNMjMsMTAuMWMwLDAtMC4xLDAtMC4xLDBDMjIuMywxMCwyMS45LDkuNSwyMiw5YzAtMC4yLDA
+tMC4zLDAtMC41YzAtMC4xLDAtMC4zLDAtMC40bDAtMC4yYzAsMCwwLTAuMSwwLTAuMQpjMC0wLj
+ItMC4xLTAuMy0wLjEtMC41Yy0wLjItMC43LTAuNS0xLjItMC45LTEuN2MwLDAsMCwwLTAuMS0wL
+jFDMjAsNC41LDE4LjgsNCwxNy41LDRDMTUsNCwxMyw2LDEzLDguNWMwLDAuNi0wLjQsMS0xLDEK
+cy0xLTAuNC0xLTFDMTEsNC45LDEzLjksMiwxNy41LDJjMS45LDAsMy42LDAuOCw0LjksMi4yYzA
+sMCwwLDAsMCwwYzAsMCwwLDAsMC4xLDAuMWMwLjYsMC43LDEsMS41LDEuMywyLjQKYzAuMSwwLj
+IsMC4xLDAuNSwwLjIsMC44YzAsMCwwLDAuMSwwLDAuMWwwLDAuMmMwLDAuMiwwLDAuNCwwLDAuN
+2MwLDAuMiwwLDAuNCwwLDAuN0MyMy45LDkuNywyMy41LDEwLjEsMjMsMTAuMXoiLz4KPC9nPgo8
+L2c+CjxnPgo8Zz4KPHBhdGggZD0iTTEyLDIyQzcuNywyMiwwLjUsMTUuMSwwLDkuMWMwLTAuMiw
+wLTAuNCwwLTAuNmMwLTAuMiwwLTAuNCwwLTAuNmwwLTAuMkMwLjEsNy4zLDAuMiw3LDAuMyw2Lj
+djMC4xLTAuMywwLjItMC42LDAuMy0wLjgKQzAuNyw1LjYsMC44LDUuMywxLDUuMWwwLjItMC4zY
+zAuMi0wLjIsMC4zLTAuNCwwLjQtMC41YzAuNC0wLjQsMS0wLjQsMS40LTAuMWMwLjQsMC40LDAu
+NCwxLDAuMSwxLjRDMyw1LjYsMyw1LjcsMi45LDUuOApMMi43LDYuMUMyLjYsNi4zLDIuNSw2LjU
+sMi40LDYuN0MyLjMsNi45LDIuMiw3LjEsMi4yLDcuM2MwLDAuMi0wLjEsMC40LTAuMSwwLjZsMC
+wwLjJjMCwwLjEsMCwwLjMsMCwwLjRDMiw4LjYsMiw4LjgsMiw5CmMwLjQsNC44LDYuNiwxMSwxM
+CwxMXM5LjYtNi4zLDEwLTExYzAtMC4yLDAtMC4zLDAtMC41YzAtMC4xLDAtMC4zLDAtMC40bDAt
+MC4zYzAtMC4xLTAuMS0wLjQtMC4xLTAuNmMtMC4yLTAuNi0wLjUtMS4yLTAuOS0xLjcKYy0wLjQ
+tMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBjMCwwLDAuMSwwLjEsMC4yLDAuMm
+MwLjUsMC43LDEsMS41LDEuMiwyLjNjMC4xLDAuMywwLjEsMC42LDAuMiwwLjlsMCwwLjMKYzAsM
+C4yLDAsMC40LDAsMC43YzAsMC4yLDAsMC40LDAsMC43QzIzLjUsMTUuMSwxNi4zLDIyLDEyLDIy
+eiIvPgo8L2c+CjwvZz4KPC9nPgo8L3N2Zz4="/>
+    <img id="img_coin"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
+iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
+AyNSI+CjxjaXJjbGUgY3g9IjEyLjUiIGN5PSIxMi41IiByPSI3IiBmaWxsPSIjRkZENzAwIiBzd
+HJva2U9IiNEQUE1MjAiIHN0cm9rZVdpZHRoPSIxIiAvPgo8L3N2Zz4="/>
+    <img id="img_police"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
+iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
+AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywyMiAxMi41LDMgMjIsMjIiIGZpbGw9Im5vbmUiIHN0c
+m9rZT0iZ3JlZW4iIHN0cm9rZVdpZHRoPSIyIiAvPgo8L3N2Zz4="/>
+    <img id="img_police_self"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
+iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
+AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywyMiAxMi41LDMgMjIsMjIiIGZpbGw9Im5vbmUiIHN0c
+m9rZT0iZ3JlZW4iIHN0cm9rZVdpZHRoPSIyIiAvPgo8cG9seWdvbiBwb2ludHM9IjYsMjAgMTIu
+NSw3IDE5LDIwIiBmaWxsPSJncmVlbiIgc3Ryb2tlPSJncmVlbiIgc3Ryb2tlV2lkdGg9IjIiIC8
++Cjwvc3ZnPg=="/>
+    <img id="img_thief"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
+iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
+AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywxMi41IDEyLjUsMyAyMiwxMi41IDEyLjUsMjIiIGZpb
+Gw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjwvc3ZnPg=="/>
+    <img id="img_thief_self"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
+iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
+AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywxMi41IDEyLjUsMyAyMiwxMi41IDEyLjUsMjIiIGZpb
+Gw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjxwb2x5Z29uIHBvaW50
+cz0iNiwxMi41IDEyLjUsNiAxOSwxMi41IDEyLjUsMTkiIGZpbGw9ImJsdWUiIHN0cm9rZT0iYmx
+1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjwvc3ZnPg=="/>
+    <img id="img_switch"
+         src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
+iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
+AyNSI+CjxnIHN0cm9rZT0iIzgwMDA4MCIgc3Ryb2tlV2lkdGg9IjIiPgo8bGluZSB4MT0iNyIge
+TE9IjMiIHgyPSI3IiB5Mj0iMjIiIC8+CjxsaW5lIHgxPSIzIiB5MT0iOCIgeDI9IjciIHkyPSI0
+IiAvPgo8bGluZSB4MT0iMTEiIHkxPSI4IiB4Mj0iNyIgeTI9IjQiIC8+CjxsaW5lIHgxPSIxOCI
+geTE9IjMiIHgyPSIxOCIgeTI9IjIyIiAvPgo8bGluZSB4MT0iMTQiIHkxPSIxNyIgeDI9IjE4Ii
+B5Mj0iMjEiIC8+CjxsaW5lIHgxPSIyMiIgeTE9IjE3IiB4Mj0iMTgiIHkyPSIyMSIgLz4KPC9nP
+go8L3N2Zz4="/>
+</div>
+<script src="modernizr.js" type="text/javascript"></script>
+<script src="http://104.40.150.146/js/jquery.js" type="text/javascript"></script>
+<script src="http://104.40.150.146/js/jquery.signalR.js" type="text/javascript"></script>
+<!-- TODO: Раскомментировать при начале работы с сервером -->
+<script src="http://104.40.150.146/js/bootstrap.js" type="text/javascript"></script>
+<script src="http://104.40.150.146/js/gameApi.js" type="text/javascript"></script>
+<!-- TODO: Раскомментировать при начале работы с сервером -->
+<script src="sugar-1.4.1.min.js" type="text/javascript"></script>
+<script src="constants.js" type="text/javascript"></script>
+<script src="utils.js" type="text/javascript"></script>
+<script src="gameController.js" type="text/javascript"></script>
+<!-- TODO: Раскомментировать при начале работы с сервером -->
+<script src="game.js" type="text/javascript"></script>
+</body>
+</html>
