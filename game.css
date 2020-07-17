@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -181,3 +185,4 @@ body {
 .bg-main .footer-block .btn-border:hover {
   text-decoration: none;
 }
+

@@ -5,8 +5,8 @@
     <title>study game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--  TODO: Раскомментировать при начале работы с сервером -->
-    <!-- <link rel="stylesheet" href="http://104.40.150.146/css/bootstrap.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="http://104.40.150.146/css/bootstrap-theme.css" type="text/css" /> -->
+    <link rel="stylesheet" href="http://104.40.150.146/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="http://104.40.150.146/css/bootstrap-theme.css" type="text/css" />
 
      <!-- TODO: Закомментировать при начале работы с сервером  -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,57 +16,67 @@
 <!-- TODO: Task 0. Построить вёрстку приложения по макету
           используя для сетки bootstrap -->
 
-    <div class="container-fluid game-container bg-main">
-        
-        <div class="top-block">
-            <div class="block-wrapper">
-                <span class="digit">123</span>
-                <a class="bg-yellow">Регистрация</a>
+          <div class="container-fluid game-container bg-main" id="containerGame">
+            <div class="top-block">
+                  <div class="block-wrapper">
+                      <span class="digit">
+                          123
+                      </span>
+                      <a class="bg-yellow">открыта регистрация</a>
+                  </div>
             </div>
-        </div>
-
-        <div class="clock">
-            <span class="clocks">00:30</span>
-        </div>
-
-        <div class="map-block">
-            <div class="map-block-wrapper">
-                <div class="common-container">
-                    <div class="police-wrapper">
-                        <div class="police-header">Полицейские</div>
+            <div class="clock">
+                <span class="clocks" id="timer">00:00</span>
+            </div>
+            <div class="map-block">
+                <div class="map-block-wrapper">
+                    <div class="common-container" id="police">
+                      <div class="police-wrapper">
+                        <div class="police-header" id="policeCaption">
+                            Синяки полиция
+                        </div>
                         <div class="lifes-and-coins">
-                            <span>Жизни: <span class="bg-red">3</span></span>
-                            <span>Монеты: <span class="bg-yellow">0</span></span>
+                            <span id="policeLives">Жизни: <span class="bg-red">3</span></span>
+                            <span id="policeCoins">Монеты: <span class="bg-yellow">0</span></span>
                         </div>
                         <div class="police-footer">
                             <span class="bg-yellow">undefined</span>
                             <span class="bg-red">undefined</span>
                             <span class="bg-black">undefined</span>
                         </div>
+                      </div>
                     </div>
-                </div>
-                <div class="map">
-                    <img src="map.png" alt="Карта">
-                </div>
-                <div class="common-container">
-                <div class="thief-wrapper">
-                    <div class="thief-header">Воры</div>
-                    <div class="lifes-and-coins">
-                        <span>Жизни: <span class="bg-red">3</span></span>
-                        <span>Монеты: <span class="bg-yellow">0</span></span>
+                    <div class="map">
+                        <!-- <img src="map.png" alt="Карта"> -->
+                        <canvas id="mapCanvas"></canvas>
                     </div>
-                </div>
+                    <div class="common-container" id="thieves">
+                      <div class="thief-wrapper">
+                        <div class="thief-header" id="thievesCaption">
+                            Курилки мошенники
+                        </div>
+                        <div class="lifes-and-coins">
+                            <span id="thievesLives">Жизни: <span class="bg-red">3</span></span>
+                            <span id="thievesCoins">Монеты: <span class="bg-yellow">0</span></span>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="footer-block">
+                <button class="btn-border" id="btnGameList">К списку игр</button>
+                <button class="btn-border" id="btnConnect">Присоединиться</button>
+                <button class="btn-border" id="startBtn">Начать игру</button>
+                <button class="btn-border" id="btnPause">Пауза</button>
+                <button class="btn-border" id="leaveBtn">Покинуть игру</button>
+                <button class="btn-border red" id="cancelBtn">Прервать игру</button>
+                <button class="btn-border blue" id="btnConnectPolice">Присоединиться к полиции</button>
+                <button class="btn-border yellow" id="btnConnectThief">Присоединиться к ворам</button>
 
-        <div class="footer-block">
-            <a href="#" class="btn-border">К списку игр</a>
-            <a href="#" class="btn-border">Начать игру</a>
-            <a href="#" class="btn-border">Покинуть игру</a>
-            <a href="#" class="btn-border red">Прервать игру</a>
+                
+            </div>
         </div>
-
+      
     </div>
 
 <div class="hidden">
