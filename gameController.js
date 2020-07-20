@@ -26,6 +26,7 @@
                     this.game = this.gameApi.subscribe();
                     this.game.onError(function (error) {
                         console.log(error);
+                        alert(`${error.error}: ${error.code.description}`);
                         if (error) {
                             if (error.error === 'invalidGame') {
                                 this.callbacks.synced.fire(false, error);

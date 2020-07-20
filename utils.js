@@ -1,11 +1,35 @@
 'use strict';
 // utilities
 const utils = {
-    getStatusName: (status) => (
-        !status
-            ? STATUSES_NAMES.open
-            : (STATUSES_NAMES[status] || STATUSES_NAMES.error)
-    ),
+    getStatusName: (statusId) => {
+        var status = STATUSES_NAMES.open;
+        switch (statusId) {
+            case GameApi.GameStatus.open:
+                break;
+            case GameApi.GameStatus.ready:
+                status = STATUSES_NAMES.ready;
+                break;
+            case GameApi.GameStatus.starting:
+                status = STATUSES_NAMES.starting;
+                break;
+            case GameApi.GameStatus.inProcess:
+                status = STATUSES_NAMES.inProcess;
+                break;
+            case GameApi.GameStatus.paused:
+                status = STATUSES_NAMES.paused;
+                break;
+            case GameApi.GameStatus.canceled:
+                status = STATUSES_NAMES.canceled;
+                break;
+            case GameApi.GameStatus.finished:
+                status = STATUSES_NAMES.finished;
+                break;
+            default:
+                status = STATUSES_NAMES.error;
+                break;
+        }
+        return status;
+    },
 
     canUserCancelGame: (gameApi, gameInfo) => {
         if (gameInfo.status === GameApi.GameStatus.canceled &&
